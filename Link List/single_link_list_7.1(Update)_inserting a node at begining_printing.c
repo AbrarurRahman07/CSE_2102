@@ -15,12 +15,12 @@ void print_node(struct node* start)
         start=start->link;
     }
 }
-struct node* add_at_beg(struct node *head,int n)
+void add_at_beg(struct node **head,int n)
 {
   struct node *p=(struct node*)malloc(sizeof(struct node));
     p->data=n;
-    p->link=head;
-    return p;
+    p->link=*head;
+    *head=p;
 }
 int main()
 {
@@ -45,7 +45,8 @@ int main()
     p->link=head;
     head=p;
   //by function
-    head=add_at_beg(head,5555);
-    head=add_at_beg(head,0);
+    add_at_beg(&head,5555);
+    add_at_beg(&head,0);
     print_node(head);
 }
+
