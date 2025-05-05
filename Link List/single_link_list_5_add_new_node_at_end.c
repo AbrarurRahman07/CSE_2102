@@ -5,21 +5,13 @@ struct node
     int data;
     struct node *link;
 };
-void add_at_end(struct node *head,int d)
+struct node* add_at_end(struct node *ptr, int data)
 {
-  if(head==NULL)
-    printf("Node is empty \n");
-
-    struct node *temp,*ptr;
-    ptr=head;
-    temp=(struct node*)malloc(sizeof(struct node));
-    temp->data=d;
-    temp->link=NULL;
-    while(ptr->link!=NULL)
-    {
-      ptr=ptr->link;
-    }
-    ptr->link=temp;
+    struct node *temp = malloc(sizeof(struct node));
+    temp->data = data;
+    temp->link = NULL;
+    ptr->link = temp;
+    return temp;
 }
 
 void print_data(struct node *head)
@@ -44,20 +36,11 @@ int main()
     head=(struct node*)malloc(sizeof(struct node));
     head->data=10;
     head->link=NULL;
-
-    struct node *current=NULL;
-    current=(struct node*)malloc(sizeof(struct node));
-    current->data=20;
-    current->link=NULL;
-    head->link=current;
-
-    current=(struct node*)malloc(sizeof(struct node));
-    current->data=30;
-    current->link=NULL;
-    head->link->link=current;
-    add_at_end(head,420);
-    add_at_end(head,56);
-    add_at_end(head,1);
+    struct node *ptr=head;
+    ptr=add_at_end(ptr,420);
+    ptr=add_at_end(ptr,20);
+    ptr=add_at_end(ptr,42);
+    ptr=head;
     print_data(head);
     return 0;
 }

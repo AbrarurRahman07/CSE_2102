@@ -16,7 +16,7 @@ void sort_array(int arr[],int n)
 }
 int main()
 {
-    int arr[]= {12,34,21,34,17,1,3,2,57,89,43,21,32,14,16,9,7,5};
+    int arr[]= {12,11,3,17,18,2,7};
     int n=sizeof(arr)/sizeof(int);
     cout<<"The given array is: "<<endl;
     for(int i=0; i<n; i++)
