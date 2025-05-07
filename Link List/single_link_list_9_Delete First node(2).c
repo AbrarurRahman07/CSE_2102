@@ -57,7 +57,8 @@ int main()
   print_data(head);
 
   head=delete_first_node(head);
-  print_data(head);head=delete_first_node(head);
+  print_data(head);
+  head=delete_first_node(head);
   print_data(head);
 }
 
