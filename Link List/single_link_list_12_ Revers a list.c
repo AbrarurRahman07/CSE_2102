@@ -39,42 +39,36 @@ void add_node_in_row(node** start,int n)
         ptr->link=temp;
     }
 }
-void delete_last_node(node **start)
+void reverse_all_node(node **head)
 {
-    if (*start == NULL)
-        return;
-
-    node *ptr = *start;
-
-    if (ptr->link == NULL)
+    node *ptr=NULL;
+    node *temp=*head;
+    while(temp !=NULL)
     {
-        free(ptr);
-        *start = NULL;
+        node* n=(node*)malloc(sizeof(node));
+        n->data=temp->data;
+        n->link=ptr;
+        ptr=n;
+        temp=temp->link;
     }
-    else
-    {
-        while (ptr->link->link != NULL)
-        {
-            ptr = ptr->link;
-        }
-        free(ptr->link);
-        ptr->link = NULL;
-    }
+    *head=ptr;
 }
 int main()
 {
     node *head=NULL;
     add_node_in_row(&head,10);
     add_node_in_row(&head,20);
+    add_node_in_row(&head,20);
     add_node_in_row(&head,30);
+    add_node_in_row(&head,40);
+    add_node_in_row(&head,40);
     add_node_in_row(&head,40);
     add_node_in_row(&head,50);
     print_data(head);
 
-    delete_last_node(&head);
-    print_data(head);
-    delete_last_node(&head);
+    reverse_all_node(&head);
     print_data(head);
 
 }
+
 

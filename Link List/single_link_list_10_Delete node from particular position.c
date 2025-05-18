@@ -39,26 +39,31 @@ void add_node_in_row(node** start,int n)
         ptr->link=temp;
     }
 }
-void delete_last_node(node **start)
+void delete_node(node **start,int pos)
 {
-    if (*start == NULL)
-        return;
-
     node *ptr = *start;
 
-    if (ptr->link == NULL)
+    if (*start == NULL)
+        return;
+    else if(pos==1)
     {
-        free(ptr);
-        *start = NULL;
+      *start=ptr->link;
+      free(ptr);
+      ptr=NULL;
     }
+
     else
     {
-        while (ptr->link->link != NULL)
+      pos-=2;
+        while (pos--)
         {
             ptr = ptr->link;
         }
-        free(ptr->link);
-        ptr->link = NULL;
+        node *temp=ptr;
+        temp=temp->link;
+        ptr->link=temp->link;
+        free(temp);
+        temp=NULL;
     }
 }
 int main()
@@ -71,10 +76,10 @@ int main()
     add_node_in_row(&head,50);
     print_data(head);
 
-    delete_last_node(&head);
-    print_data(head);
-    delete_last_node(&head);
+    delete_node(&head,5);
+
     print_data(head);
 
 }
+
 
