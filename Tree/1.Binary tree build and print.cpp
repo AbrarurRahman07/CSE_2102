@@ -6,6 +6,7 @@ struct node
   struct node *right;
   struct node *left;
 };
+
 struct node* newnode(int x)
 {
   struct node *element=new struct node();
@@ -16,6 +17,7 @@ struct node* newnode(int x)
 
   return element;
 }
+
 void preorder(struct node *n)
 {
   if(n!=NULL)
