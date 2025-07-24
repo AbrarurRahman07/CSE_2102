@@ -3,7 +3,7 @@ using namespace std;
 int partition(int arr[],int l,int h)
 {
   int pivot=arr[l];
-  int i=l;
+  int i=l+1;
   int j=h;
   while(1)
   {
