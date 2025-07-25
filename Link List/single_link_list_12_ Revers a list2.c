@@ -47,9 +47,12 @@ void reverse_all_node(node **head)
     while(temp !=NULL)
     {
         next=temp->link;
+
         temp->link=ptr;
         ptr=temp;
+
         temp=next;
+      print_data(ptr);
     }
     *head=ptr;
 }

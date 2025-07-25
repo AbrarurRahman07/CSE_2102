@@ -58,7 +58,7 @@ void search(int key)
 void display()
 {
     cout << "\nHash Table (Linear Probing):\n";
-    for (int i=0;i< TABLE_SIZE;i++)
+    for (int i=0;i<TABLE_SIZE;i++)
     {
         cout <<"Index "<<i<< ": ";
         if (hashTable[i] == -1)
