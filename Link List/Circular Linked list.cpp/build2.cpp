@@ -40,7 +40,7 @@ void printForward(struct node* tail)
         return;
     }
 
-    struct node* temp=tail->next; // head
+    struct node* temp=tail->next;
     do
     {
         cout<<temp->data<< " ";
@@ -49,8 +49,6 @@ void printForward(struct node* tail)
     while(temp!=tail->next);
     cout<<endl;
 }
-
-// Print from tail to head
 void printBackward(struct node* tail)
 {
     if (tail==NULL)

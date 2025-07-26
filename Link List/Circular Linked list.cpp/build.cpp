@@ -20,7 +20,7 @@ void circular_singly(struct node **tail,int n)
         struct node* temp=*tail;
         ptr->next=(*tail)->next;
         (*tail)->next=ptr;
-        //*tail=ptr;
+        *tail=ptr;
     }
 }
 void print(struct node* ptr)

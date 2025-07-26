@@ -4,7 +4,7 @@ void merge(int arr[],int l,int m,int r)
 {
     int i=l;
     int j=m+1;
-    int k=0;
+    int k=l;
     int temp[100];
 
     while(i<=m && j<=r)
