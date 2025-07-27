@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include<sstream>
 #include <cctype>  // for isdigit()
 using namespace std;
 
@@ -45,7 +44,7 @@ int main()
 
         if (isdigit(a))
         {
-            push(stoi(token));  // Convert char to int and push
+            push(a - '0');  // Convert char to int and push
         }
         else
         {

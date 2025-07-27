@@ -30,6 +30,7 @@ int pop()
 int main()
 {
     string expr= "73 53 43 * 5 1^ / + 30 2 - +";
+
     /**cout << "Enter postfix expression (e.g., \"12 145 1234 + *\"): ";
     getline(cin, expr);*/
 
