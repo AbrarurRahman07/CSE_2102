@@ -4,7 +4,7 @@ void merge(int arr[],int l,int m,int r)
 {
     int i=l;
     int j=m+1;
-    int k=l;
+    int k=0;
     int temp[100];
 
     while(i<=m && j<=r)
@@ -20,7 +20,7 @@ void merge(int arr[],int l,int m,int r)
     while (j<=r)
         temp[k++]=arr[j++];
 
-    for (int p=0;p<k;p++)
+    for (int p=0;p<k;p++)///extra task
         arr[l+p] =temp[p];
 }
 void mergeSort(int arr[],int l,int r)

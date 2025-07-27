@@ -10,7 +10,7 @@ void push(char data)
 {
     struct node *ptr=(struct node*)malloc(sizeof(struct node));
     ptr->data=data;
-    ptr->link=NULL;
+    //ptr->link=NULL;
     ptr->link=top;
     top=ptr;
 }
